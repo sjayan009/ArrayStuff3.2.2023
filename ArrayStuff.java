@@ -106,7 +106,26 @@ public class ArrayStuff
         return count;
     }
 
-    // Problem 8 Unsolved
+    public static void consecutive(int[] arr, boolean var)
+    {
+        int num = 1;
+        //false means NO OVERLAP
+        //true means OVERLAP
+        if(var == false)
+        {
+            num = 2;
+        }
+        for(int i = 0; i < arr.length - 1; i+=num)
+        {
+            if(i != arr.length - 1)
+            {
+                if((arr[i] - arr[i+1]) == -1)
+                {
+                    System.out.println(arr[i] + " " + arr[i+1]);
+                }
+            }
+        }
+    }
 
     public static boolean findDuplicates(int[] arr)
     {
@@ -190,5 +209,9 @@ public class ArrayStuff
         int[] testArray2 = {1,2,3,4};
         System.out.println(Arrays.toString(shiftLeft(testArray2)));
         System.out.println(Arrays.toString(shiftRight(testArray2)));
+        
+        consecutive(testArray2, false);
+        System.out.println();
+        consecutive(testArray2, true);
     }
 }
